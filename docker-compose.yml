@@ -1,4 +1,8 @@
-# Run with docker compose up -d
+version: "3"
+networks:
+  unklab:
+    external: true
+
 services:
   dozzle:
     image: amir20/dozzle:latest
@@ -7,3 +11,5 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 64000:8080
+    networks:
+      - unklab
