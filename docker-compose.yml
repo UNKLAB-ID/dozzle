@@ -5,6 +5,7 @@ networks:
 services:
   dozzle:
     image: amir20/dozzle:latest
+    pull_policy: always
     container_name: dozzle
     restart: unless-stopped
     environment:
