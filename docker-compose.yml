@@ -1,7 +1,3 @@
-networks:
-  unklab:
-    external: true
-
 services:
   dozzle:
     image: amir20/dozzle:latest
@@ -12,5 +8,5 @@ services:
       - DOZZLE_REMOTE_AGENT=${DOZZLE_REMOTE_AGENT}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    networks:
-      - unklab
+    ports:
+      - '65000:8080'
